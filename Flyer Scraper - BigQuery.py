@@ -135,7 +135,7 @@ print("\nTotal flyer items: " + str(flyer_df.shape[0]))
 driver.close()
 
 # BigQuery
-credentials = service_account.Credentials.from_service_account_file("big-query-exploration-432116-65c7ff596094.json")
+credentials = service_account.Credentials.from_service_account_info(json.loads(os.getenv("BIGQUERY_KEYS_JSON")))
 client = bigquery.Client(credentials = credentials, project = credentials.project_id)
 dataset, table = "dbt_smaitra", "landing_grocery_flyer_items"
 
