@@ -78,7 +78,7 @@ def parse_flyer(site, offers, url):
     select 
         flyer_item, sku, offer, 
         discount_spend::numeric discount_spend, offer_price::numeric offer_price, discount_spend::numeric+offer_price::numeric regular_price, offer_price_limit_unit_weight::numeric offer_price_limit_unit_weight, 
-        platform, url, strftime(now(), '%Y-%m-%d, %I:%M %p') report_time
+        platform, url, strftime(now() - interval '4 hours', '%Y-%m-%d, %I:%M %p') report_time
     from flyer_df
     '''
     flyer_df = duckdb.query(qry).df()
