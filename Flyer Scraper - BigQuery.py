@@ -13,6 +13,7 @@ import time
 import fuckit
 import os
 import json
+import pyarrow
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
