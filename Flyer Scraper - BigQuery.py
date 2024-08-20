@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 ## import
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -13,22 +10,13 @@ import pandas as pd
 import duckdb
 import time
 import fuckit
-
 from google.cloud import bigquery
 from google.oauth2 import service_account
-
-
-# In[2]:
-
 
 ## window
 driver = webdriver.Chrome()
 driver.implicitly_wait(20)
 driver.maximize_window()
-
-
-# In[3]:
-
 
 ## parse
 def parse_flyer(site, offers, url):
@@ -90,11 +78,6 @@ def parse_flyer(site, offers, url):
     # return
     print(site + " items: " + str(flyer_df.shape[0]))
     return flyer_df
-    
-
-
-# In[4]:
-
 
 ## scrape
 def scrape_flyer(site, url, element):
@@ -117,11 +100,7 @@ def scrape_flyer(site, url, element):
     # tabular
     flyer_df = parse_flyer(site, offers, url)
     return flyer_df
-
-
-# In[5]:
-
-
+    
 ## caller
 @fuckit
 def scrape_call():
@@ -148,18 +127,10 @@ def scrape_call():
     # return
     return flyer_df
 
-
-# In[6]:
-
-
 ## results
 flyer_df = scrape_call()
 print("\nTotal flyer items: " + str(flyer_df.shape[0]))
 driver.close()
-
-
-# In[7]:
-
 
 # BigQuery
 credentials = service_account.Credentials.from_service_account_file("big-query-exploration-432116-65c7ff596094.json")
@@ -181,10 +152,3 @@ job = client.load_table_from_dataframe(load_df, tbl)
 # stats
 job.result()
 print("Loaded " + str(job.output_rows) + " rows into " + dataset + "." + table)
-
-
-# In[ ]:
-
-
-
-
