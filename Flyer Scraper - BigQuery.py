@@ -10,6 +10,8 @@ import pandas as pd
 import duckdb
 import time
 import fuckit
+import os
+import json
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
