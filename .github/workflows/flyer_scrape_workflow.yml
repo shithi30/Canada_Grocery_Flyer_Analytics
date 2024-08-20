@@ -22,7 +22,7 @@ jobs:
       run: sudo apt purge google-chrome-stable  
   
     - name: Installing packages
-      run: pip install selenium beautifulsoup4 pyvirtualdisplay pandas duckdb fuckit google-cloud-bigquery google-auth
+      run: pip install selenium beautifulsoup4 pyvirtualdisplay pandas duckdb fuckit pyarrow google-cloud-bigquery google-auth
       
     - name: Installing xvfb
       run: sudo apt-get install xvfb
