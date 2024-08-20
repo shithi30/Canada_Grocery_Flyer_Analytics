@@ -2,6 +2,7 @@
 # coding: utf-8
 
 ## import
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
@@ -14,6 +15,10 @@ import os
 import json
 from google.cloud import bigquery
 from google.oauth2 import service_account
+
+## setup
+Display(visible = 0, size = (1920, 1080)).start() 
+options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 ## window
 driver = webdriver.Chrome()
