@@ -1,0 +1,34 @@
+name: Push Flyers to BigQuery
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 * * *"    
+    
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checking out repo
+      uses: actions/checkout@v3
+      
+    - name: Setting up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11.7"
+        
+    - name: Removing previous Chrome
+      run: sudo apt purge google-chrome-stable  
+  
+    - name: Installing packages
+      run: pip install selenium beautifulsoup4 pandas duckdb fuckit google-cloud-bigquery google-auth
+      
+    - name: Installing xvfb
+      run: sudo apt-get install xvfb
+
+    - name: Running Python script
+      env:  
+          BIGQUERY_KEYS_JSON: ${{ secrets.BIGQUERY_KEYS_JSON }}
+      run: python "Flyer Scraper - BigQuery.py"
+      
