@@ -18,7 +18,7 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 
 ## setup
-Display(visible = 0, size = (1920, 5080)).start() 
+Display(visible = 0, size = (1920, 1080)).start() 
 options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 ## window
@@ -96,10 +96,12 @@ def scrape_flyer(site, url, element):
     last_height = driver.execute_script('return document.body.scrollHeight')
     while True:
         driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
-        time.sleep(3)
+        time.sleep(4)
         new_height = driver.execute_script('return document.body.scrollHeight')
         if new_height == last_height: break
         last_height = new_height
+        
+    time.sleep(4)
     driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
 
     # soup
