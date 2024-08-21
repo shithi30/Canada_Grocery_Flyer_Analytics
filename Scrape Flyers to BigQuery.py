@@ -2,7 +2,6 @@
 # coding: utf-8
 
 ## import
-from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
@@ -13,7 +12,6 @@ import time
 import fuckit
 import os
 import json
-import pyarrow
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
@@ -89,8 +87,6 @@ def scrape_flyer(site, url, element):
     # iframe
     driver.get(url)
     driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
-    # driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe.'flippiframe mainframe'"))
-    # driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe.flippiframe.mainframe"))
 
     # soup
     time.sleep(3)
