@@ -22,7 +22,7 @@ Display(visible = 0, size = (1920, 1080)).start()
 options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 ## window
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options = options)
 driver.implicitly_wait(30)
 driver.maximize_window()
 
