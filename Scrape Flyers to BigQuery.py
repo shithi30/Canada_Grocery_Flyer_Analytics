@@ -94,7 +94,7 @@ def scrape_flyer(site, url, element):
     driver.get(url)
     # driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
     # driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe.'flippiframe mainframe'"))
-    driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe[title='Main Panel']"))
+    driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe.flippiframe.mainframe"))
 
     # soup
     time.sleep(3)
