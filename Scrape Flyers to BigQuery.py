@@ -163,6 +163,6 @@ driver.close()
 # tbl = client.dataset(dataset).table(table)
 # job = client.load_table_from_dataframe(load_df, tbl)
 
-# stats
-job.result()
-print("Loaded " + str(job.output_rows) + " rows into " + dataset + "." + table)
+# # stats
+# job.result()
+# print("Loaded " + str(job.output_rows) + " rows into " + dataset + "." + table)
