@@ -22,6 +22,7 @@ Display(visible = 0, size = (1920, 1080)).start()
 options = webdriver.ChromeOptions()
 options.add_argument("ignore-certificate-errors")
 options.add_argument('window-size=1200x1040')
+options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36')
 
 ## window
 driver = webdriver.Chrome(options = options)
