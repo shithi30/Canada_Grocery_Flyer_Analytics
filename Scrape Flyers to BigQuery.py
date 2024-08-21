@@ -92,17 +92,9 @@ def scrape_flyer(site, url, element):
 
     # iframe
     driver.get(url)
-    # scroll
-    last_height = driver.execute_script('return document.body.scrollHeight')
-    while True:
-        driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
-        time.sleep(4)
-        new_height = driver.execute_script('return document.body.scrollHeight')
-        if new_height == last_height: break
-        last_height = new_height
-        
-    time.sleep(4)
-    driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
+    # driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
+    # driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe.'flippiframe mainframe'"))
+    driver.switch_to.frame(driver.find_element(By.CSS_SELECTOR, "iframe[title='Main Panel']"))
 
     # soup
     time.sleep(3)
