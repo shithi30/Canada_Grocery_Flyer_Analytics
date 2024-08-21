@@ -23,7 +23,7 @@ options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 ## window
 driver = webdriver.Chrome()
-driver.implicitly_wait(20)
+driver.implicitly_wait(60)
 driver.maximize_window()
 
 ## parse
