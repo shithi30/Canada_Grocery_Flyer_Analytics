@@ -12,12 +12,13 @@ import time
 import fuckit
 import os
 import json
+import pyarrow
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
 ## window
 driver = webdriver.Chrome()
-driver.implicitly_wait(30)
+driver.implicitly_wait(20)
 driver.maximize_window()
 
 ## parse
@@ -87,7 +88,7 @@ def scrape_flyer(site, url, element):
     # iframe
     driver.get(url)
     driver.switch_to.frame(driver.find_element(By.XPATH, ".//iframe[@title='Main Panel']"))
-
+    
     # soup
     time.sleep(3)
     soup = BeautifulSoup(driver.page_source, "html.parser").find("sfml-linear-layout").find_all(element)
@@ -104,21 +105,21 @@ def scrape_flyer(site, url, element):
     return flyer_df
     
 ## caller
-# @fuckit
+@fuckit
 def scrape_call():
 
     # call
     flyer_df = pd.DataFrame()
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("NoFrills", "https://www.nofrills.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("Freshco", "https://freshco.com/flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("ThriftyFoods", "https://www.thriftyfoods.com/weekly-flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("Foodland", "https://foodland.ca/flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("NoFrills", "https://www.nofrills.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("Freshco", "https://freshco.com/flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("ThriftyFoods", "https://www.thriftyfoods.com/weekly-flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("Foodland", "https://foodland.ca/flyer", "button")], ignore_index = True)
     flyer_df = pd.concat([flyer_df, scrape_flyer("Sobeys", "https://www.sobeys.com/en/flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("Safeway", "https://www.safeway.ca/flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("IGA", "https://www.iga.net/en/flyer", "a")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("RealCanadian", "https://www.realcanadiansuperstore.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("Loblaws", "https://www.loblaws.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
-    # flyer_df = pd.concat([flyer_df, scrape_flyer("Zehrs", "https://www.zehrs.ca/print-flyer?navid=flyout-L2-Flyer", "a")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("Safeway", "https://www.safeway.ca/flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("IGA", "https://www.iga.net/en/flyer", "a")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("RealCanadian", "https://www.realcanadiansuperstore.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("Loblaws", "https://www.loblaws.ca/print-flyer?navid=flyout-L2-Flyer", "button")], ignore_index = True)
+    flyer_df = pd.concat([flyer_df, scrape_flyer("Zehrs", "https://www.zehrs.ca/print-flyer?navid=flyout-L2-Flyer", "a")], ignore_index = True)
     
     # error
     to_scraped = set(["NoFrills", "Sobeys", "Freshco", "ThriftyFoods", "Foodland", "Safeway", "IGA", "RealCanadian", "Loblaws", "Zehrs"])
