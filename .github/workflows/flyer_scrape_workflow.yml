@@ -19,8 +19,7 @@ jobs:
         python-version: "3.11.7"
         
     - name: Installing packages
-      run: |
-        pip install selenium==4.18.1 beautifulsoup4 pyvirtualdisplay pandas duckdb fuckit pyarrow google-cloud-bigquery google-auth
+      run: pip install selenium beautifulsoup4 pandas duckdb fuckit google-cloud-bigquery google-auth
         
     - name: Running Python script
       env:  
