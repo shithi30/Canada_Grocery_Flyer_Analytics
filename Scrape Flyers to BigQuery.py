@@ -134,23 +134,23 @@ flyer_df = scrape_call()
 print("\nTotal flyer items: " + str(flyer_df.shape[0]))
 driver.close()
 
-# # BigQuery
-# credentials = service_account.Credentials.from_service_account_info(json.loads(os.getenv("BIGQUERY_KEYS_JSON")))
-# client = bigquery.Client(credentials = credentials, project = credentials.project_id)
-# dataset, table = "dbt_smaitra", "landing_grocery_flyer_items"
+# BigQuery
+credentials = service_account.Credentials.from_service_account_info(json.loads(os.getenv("BIGQUERY_KEYS_JSON")))
+client = bigquery.Client(credentials = credentials, project = credentials.project_id)
+dataset, table = "dbt_smaitra", "landing_grocery_flyer_items"
 
-# # truncate
-# qry = "truncate table " + dataset + "." + table 
-# res = client.query(qry).result()
+# truncate
+qry = "truncate table " + dataset + "." + table 
+res = client.query(qry).result()
 
-# # ID
-# qry = "select row_number() over() id, * from flyer_df"
-# load_df = duckdb.query(qry).df()
+# ID
+qry = "select row_number() over() id, * from flyer_df"
+load_df = duckdb.query(qry).df()
 
-# # load
-# tbl = client.dataset(dataset).table(table)
-# job = client.load_table_from_dataframe(load_df, tbl)
+# load
+tbl = client.dataset(dataset).table(table)
+job = client.load_table_from_dataframe(load_df, tbl)
 
-# # stats
-# job.result()
-# print("Loaded " + str(job.output_rows) + " rows into " + dataset + "." + table)
+# stats
+job.result()
+print("Loaded " + str(job.output_rows) + " rows into " + dataset + "." + table)
