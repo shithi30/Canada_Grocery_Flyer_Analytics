@@ -18,7 +18,7 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 
 ## setup
-Display(visible = 1, size = (2000, 4000)).start() 
+Display(visible = 0, size = (2000, 4000)).start() 
 options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
 
 ## window
