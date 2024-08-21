@@ -19,7 +19,9 @@ from google.oauth2 import service_account
 
 ## setup
 Display(visible = 0, size = (1920, 1080)).start() 
-options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
+options = webdriver.ChromeOptions()
+options.add_argument("ignore-certificate-errors")
+options.add_argument('window-size=1200x1040')
 
 ## window
 driver = webdriver.Chrome(options = options)
