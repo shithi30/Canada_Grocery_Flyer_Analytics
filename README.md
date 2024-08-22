@@ -3,7 +3,7 @@ This repo contains my ongoing analytics of Ontario's top-10 grocery stores' flye
 Tech stack: ```dbt``` ```GCP BigQuery``` ```GitHub Actions``` ```Selenium``` ```BeautifulSoup```<br>
 Data modeling & transformation scripts/jobs/tests on ```dbt```, can be found [here](https://github.com/shithi30/DBT_BigQuery_Analytics/tree/main).
 
-### Transformations & Documentation - dbt
+### Modeling & Transformation - dbt
 <p align="center">
   <img width="1100" alt="c5" src="https://github.com/user-attachments/assets/f187187e-de3a-491b-a804-fad60bc2fc7e"><br>
 </p>
@@ -13,7 +13,7 @@ Data modeling & transformation scripts/jobs/tests on ```dbt```, can be found [he
   <img width="1000" alt="c5" src="https://github.com/user-attachments/assets/a7b10571-b2e6-4162-9170-2d784a4337ec"><br>
 </p>
 
-### Data Lineage & Modeling - dbt
+### Data Lineage & Documentation - dbt
 <p align="center">
   <img width="950" alt="c5" src="https://github.com/user-attachments/assets/37319f4c-a24a-45c0-8a6f-30fb637932b6"><br>
 </p>
@@ -47,4 +47,4 @@ def scrape_call():
 ```  
 </p>
 
-<strong>Note</strong>: All scraping activities have been performed in compliance with robots.txt regulations.
+<br><strong>Note</strong>: All scraping activities have been performed in compliance with robots.txt regulations.
