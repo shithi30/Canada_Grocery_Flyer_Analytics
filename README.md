@@ -1,8 +1,7 @@
 This repo contains my ongoing analytics of Ontario's top-10 grocery stores' flyers, to get myself the best weekly deals! 
-<br>
-Data modeling & transformation scripts/jobs/tests on ```dbt```, can be found [here](https://github.com/shithi30/DBT_BigQuery_Analytics/tree/main).<br><br>
-Tech stack: ```dbt``` ```GCP BigQuery``` ```GitHub Actions``` ```Selenium``` ```BeautifulSoup```
-
+<br><br>
+Tech stack: ```dbt``` ```GCP BigQuery``` ```GitHub Actions``` ```Selenium``` ```BeautifulSoup```<br>
+Data modeling & transformation scripts/jobs/tests on ```dbt```, can be found [here](https://github.com/shithi30/DBT_BigQuery_Analytics/tree/main).
 
 ### Transformations & Documentation - dbt
 <p align="center">
