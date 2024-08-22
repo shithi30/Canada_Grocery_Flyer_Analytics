@@ -45,11 +45,11 @@ def parse_flyer(site, offers, url):
         try: offer_price_upto = vals[1][1:]
         except: offer_price_upto = None
 
-        # discount - dollar - front
+        # discount - dollar | front
         pattern = re.compile("\$\s*[0-9]+\.*[0-9]*")
         try: discount = pattern.findall(discount_offer)[-1][1:]
         except: discount = None
-        # discount - dollar - back
+        # discount - dollar | back
         if discount is None:
             pattern = re.compile("[0-9]+\.*[0-9]*\s*\$")
             try: discount = pattern.findall(discount_offer)[-1][:-1]
@@ -135,7 +135,7 @@ flyer_df = scrape_call()
 print("\nTotal flyer items: " + str(flyer_df.shape[0]))
 driver.close()
 
-# BigQuery
+## BigQuery
 credentials = service_account.Credentials.from_service_account_info(json.loads(os.getenv("BIGQUERY_KEYS_JSON")))
 client = bigquery.Client(credentials = credentials, project = credentials.project_id)
 dataset, table = "dbt_smaitra", "landing_grocery_flyer_items"
