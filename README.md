@@ -5,12 +5,12 @@ Data modeling & transformation scripts/jobs/tests on ```dbt```, can be found [he
 
 ### Transformations & Documentation - dbt
 <p align="center">
-  <img width="950" alt="c5" src="https://github.com/user-attachments/assets/f187187e-de3a-491b-a804-fad60bc2fc7e"><br>
+  <img width="1100" alt="c5" src="https://github.com/user-attachments/assets/f187187e-de3a-491b-a804-fad60bc2fc7e"><br>
 </p>
 
 ### Warehoused Results - BigQuery
 <p align="center">
-  <img width="950" alt="c5" src="https://github.com/user-attachments/assets/a7b10571-b2e6-4162-9170-2d784a4337ec"><br>
+  <img width="1000" alt="c5" src="https://github.com/user-attachments/assets/a7b10571-b2e6-4162-9170-2d784a4337ec"><br>
 </p>
 
 ### Data Lineage & Modeling - dbt
