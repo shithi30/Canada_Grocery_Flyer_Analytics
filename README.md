@@ -2,7 +2,7 @@ This repository contains my ongoing analytics of Ontario's top-10 grocery stores
 <br><br>
 Tech stack: ```dbt``` ```GCP BigQuery``` ```GitHub Actions``` ```Selenium``` ```BeautifulSoup```<br>
 Data modeling & transformation scripts/jobs/tests on ```dbt``` , can be found [here](https://github.com/shithi30/DBT_BigQuery_Analytics/tree/main).<br>
-Latest analytics [here](https://docs.google.com/spreadsheets/d/1Fokcum9d__mAxw8PEN_djL34UL9l5Uq8j5LCPwjAE9Y/edit?gid=0#gid=0), served daily from ```Azure Function App``` , [here](https://github.com/shithi30/Azure_Deployments).
+Latest analytics [here](https://docs.google.com/spreadsheets/d/1Fokcum9d__mAxw8PEN_djL34UL9l5Uq8j5LCPwjAE9Y/edit?gid=0#gid=0), served daily from an ```Azure Function App``` , [here](https://github.com/shithi30/Azure_Deployments).
 
 ### Modeling & Transformation - dbt
 <p align="center">
