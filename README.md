@@ -47,7 +47,7 @@ def scrape_call():
 ```  
 </p>
 
-### Output Notifiers - Top-03/Category
+### Output Notifiers: Top-03/Category
 <p align="center">
   <img width="1020" alt="c5" src="https://github.com/user-attachments/assets/9e4df3c9-ad7d-4ee9-9fe8-136fce1e8302"><br>
 </p>
