@@ -47,4 +47,4 @@ def scrape_call():
 ```  
 </p>
 
-<br><strong>Note</strong>: All scraping activities have been performed in compliance with robots.txt regulations.
+<strong>Note</strong>: All scraping activities have been performed in compliance with robots.txt regulations.
